@@ -1,0 +1,40 @@
+---
+title: 'Tday'
+description: "Tday is a self-hosted to-do and task manager."
+hide_title: true
+---
+
+import { IntegrationHeader } from '@site/src/components/integrations/header';
+import { IntegrationCapabilites } from '@site/src/components/integrations/widgets';
+import { AddingIntegration } from '@site/src/components/integrations/adding';
+import { IntegrationSecrets } from '@site/src/components/integrations/secrets';
+import { tdayIntegration } from '.';
+import { tdayTasksWidget } from '@site/docs/widgets/tday-tasks';
+
+
+<IntegrationHeader
+  integration={tdayIntegration}
+  categories={['Tasks']}
+/>
+
+The Tday integration lets Homarr connect to your Tday instance so you can view, complete, add and edit your tasks directly from your dashboard.
+
+### Widgets & Capabilities
+<IntegrationCapabilites
+  items={[{
+    widget: tdayTasksWidget
+  }]}
+/>
+
+### Adding the integration
+<AddingIntegration />
+
+### Secrets
+<IntegrationSecrets secrets={[{
+  credentials: ['apiKey'],
+  steps: [
+    'Open your Tday web app and go to Settings → API Key / Dashboard Access.',
+    'Click Generate Key and copy the key (it is only shown once).',
+    'Paste that key into the API Key secret field in Homarr, along with your Tday server URL.'
+  ]
+}]} />

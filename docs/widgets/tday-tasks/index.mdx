@@ -1,0 +1,47 @@
+---
+title: 'Tday Tasks'
+description: 'View, complete, add and edit your Tday tasks'
+hide_title: true
+---
+
+import { WidgetHeader } from '@site/src/components/widgets/header';
+import { AddingWidget } from '@site/src/components/widgets/adding';
+import { WidgetConfig } from '@site/src/components/widgets/configuration';
+import { WidgetIntegrations } from '@site/src/components/widgets/integrations';
+import { tdayTasksWidget } from '.';
+import { tdayIntegration } from '@site/docs/integrations/tday';
+
+
+<WidgetHeader
+  widget={tdayTasksWidget}
+  categories={['Tasks']}
+/>
+
+The Tday Tasks widget shows your tasks from a Tday integration for a chosen view — today's tasks, scheduled (non‑overdue) tasks, overdue tasks, or floater (undated) tasks. You can complete, add, edit and delete tasks directly from Homarr.
+
+### Screenshots
+
+import tdayTasksWidgetScreenshot from './img/widget.png';
+
+<img src={tdayTasksWidgetScreenshot} alt="tday-tasks-widget" width={256} height={256} />
+
+### Supported Integrations
+
+<WidgetIntegrations items={[{
+  integration: tdayIntegration
+}]} />
+
+### Interactions
+
+- Tick the **checkbox** to mark a task complete; an **Undo** toast lets you reverse it.
+- Click **+ Add task** to create one or more tasks (one per line), choosing a priority, list and due date.
+- Hover a task and click the **pencil** to edit its title, priority, list and due date.
+- While editing, click **Delete** (then confirm) to remove the task.
+
+### Adding the widget
+
+<AddingWidget />
+
+### Configuration
+
+<WidgetConfig configuration={tdayTasksWidget.configuration} />
